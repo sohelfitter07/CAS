@@ -10,52 +10,33 @@ html, body{
     font-family: "Roboto", sans-serif;
     position: relative;
     
-}
-/* #background{
+} 
+#contactlist{
     width: 100%;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-} */
-/* .c-nav {
-    width: 100%;
-}
-.c-nav--primary--expanded {
-    z-index: 1000;
-    background-color: #0000;
-    border-bottom: none;
-    height: 80px;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #451C4A;
+    height: 5vh;
+    padding: 0 3%;
     position: absolute;
-    top: 0;
+    z-index: 1;
 }
-/* .c-nav--primary--expanded.is-fixed {
-    box-shadow: none;
-    background-color: #0000;
-    border-bottom: none;
-    animation: .42s cubic-bezier(.165,.84,.44,1) slide-in--down;
-    position: fixed;
-} */
-/* @keyframes slide-in--down
-    {
-        0%  {
-            transform: translateY(-100%);
-            }
-        100%    {
-            transform: translateY(0);
-            }
-    } */ 
-.c-nav
-{
-        display: flex;
-        flex-direction: column;
-        border-bottom: 2px solid #481A54;
+.links a:hover{
+    font-size: x-large;
+    color: #D17DFE;
 }
-#top
-{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
+.links{
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
-#bottom
+.links a{
+    color: #ffffff;
+    font-size: large;
+}
+
+#navbottom
 {
     width: 100%;
     height: 15vh;
@@ -64,19 +45,34 @@ html, body{
     background-color: hsl(0, 0%, 100%);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 10%;
     font-weight: 600;
+    position: relative;
+}
+#navbottom img{
+    position: absolute;
+    object-fit: cover;
     overflow: hidden;
+    top: 2.5%;
+    left: 3%;
 }
 #nav{
     width: 100%;
-    /* padding: 20px 0; */
+    position: relative;
+}
+header{
+    margin-bottom: 5%;
 }
 #navlogo img{
     height: 23vh;
     margin-top: 5px;
-    object-fit: fill;
+}
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
 }
 .navbarList{
     display: flex;
@@ -84,17 +80,67 @@ html, body{
     gap: 5%;
     list-style: none;
     font-size: 20px;
+    
 }
 .navbarList li:hover{
-    background-color: #e7e7e7;
-    padding: 20px;
+    /* background-color: #000;
+    padding: 5% 4%; */
 }
 .navbarList a{
     text-decoration: none;
     color: #481A54;
+    cursor: pointer;
 }
 .navbar{
     display: flex;
+    position: relative;
+    top: 30%;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 180%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.4s ease, padding 0.5s ease;
+  padding: 0 0;
+  text-transform: uppercase;
+  
+}
+.dropdown-content li {
+  padding: 12px 16px;
+}
+.dropdown-content li a {
+  text-decoration: none;
+  color: #481A54;
+  display: block;
+  
+}
+.dropdown-content li:hover{
+   background-color: inherit;
+   transform: translateY(-4px); /* Lifts the item up */
+  background-color: #f0f0f0;   /* Optional: subtle background change */
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  color: #000;
+  max-height: 500px;
+  padding: 10px 0;
+
+}
+#quote{
+    position: relative;
+    top: 30%;
+
 }
 #getquote{
 background-color: #451C4A;
@@ -110,7 +156,7 @@ background-color: #451C4A;
   font-size: x-large;
  transition: .6s ease-in-out;
 }
-#getquote:hover {
+#getquote:hover{
   background-color: #ffffff;
   color: #451C4A;
   border: 1px solid #451C4A;
@@ -121,32 +167,7 @@ background-color: #451C4A;
 .links{
     list-style: none;
 }
-#contactlist{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #451C4A;
-    height: 5vh;
-}
-.links a:hover{
-    font-size: x-large;
-    color: #D17DFE;
-}
-.links{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-.links a{
-    color: #ffffff;
-    font-size: large;
-}
-#leftcontactlist{
-    padding-left: 2%;
-}
-#rightcontactlist{
-    padding-right: 2%;
-}
+
 .mainsection{
     width: 100%;
     height: 100vh;
@@ -155,7 +176,7 @@ background-color: #451C4A;
 }
 .maincontent{
     /* background-color: #ffffff; */
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -177,7 +198,8 @@ background-color: #451C4A;
     .circle1 {
       width: 80px;
       height: 80px;
-      background-color: #36C5F0;
+      /* background-color: #36C5F0; */
+      background-color: white;
       top: 3%;
       left: 5%;
       animation-delay: 0s;
@@ -186,8 +208,9 @@ background-color: #451C4A;
     .circle2 {
       width: 60px;
       height: 60px;
-      background-color: #ECB22E;
-      top: 3%;
+      /* background-color: #ECB22E; */
+      background-color: white;
+      top: 6%;
       left: 90%;
       animation-delay: 1s;
     }
@@ -195,7 +218,8 @@ background-color: #451C4A;
     .square {
       width: 70px;
       height: 70px;
-      background-color: #2EB67D;
+      /* background-color: #2EB67D; */
+      background-color: white;
       top: 30%;
       left: 5%;
       border-radius: 10px;
@@ -207,7 +231,8 @@ background-color: #451C4A;
       height: 0;
       border-left: 40px solid transparent;
       border-right: 40px solid transparent;
-      border-bottom: 70px solid #E01E5A;
+      /* border-bottom: 70px solid #E01E5A; */
+      background-color: white;
       top: 30%;
       left: 90%;
       position: absolute;
@@ -306,6 +331,7 @@ background-color: #451C4A;
     transition: box-shadow .42s cubic-bezier(.165,.84,.44,1), color .42s cubic-bezier(.165,.84,.44,1), back-ground .42s cubic-bezier(.165,.84,.44,1);
     display: block;
     transition: .6s ease-in-out;
+    
 }
 .v--secondary
  {
@@ -348,3 +374,5 @@ background-color: #451C4A;
     border: 10px solid #451C4A;
     border-radius: 10px;
  }
+ 
+

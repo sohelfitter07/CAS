@@ -13,18 +13,16 @@
 <body>
     <div class="elfsight-app-7b3b0c75-ed63-4a00-8fa3-f1538a5ff537" data-elfsight-app-lazy></div>
     <header>
-        <div>
-            <nav class="c-nav c-nav--primary--expanded c-nav--yext is-fixed">
-                <div id="top">
-                    <div id="contactlist">
+            <nav class="nav">
+                <div id="contactlist">
                         <div id="leftcontactlist">
-                            <ul class="links">
+                            <ul class="links leftlinks">
                             <li><a href="#"><i class="ri-customer-service-line"></i>  +1 289 925 7239</a></li>
                             <li><a href="#"><i class="ri-mail-line"></i>  service@canadianfitnessrepair.com</a></li>
                             </ul>
                         </div>
                         <div id="rightcontactlist">
-                            <ul class="links">
+                            <ul class="links rightlinks">
                                 <li><a href="#"><i class="ri-facebook-line"></i></a></li>
                                 <li><a href="#"><i class="ri-twitter-x-line"></i></a></li>
                                 <li><a href="#"><i class="ri-instagram-line"></i></a></li>
@@ -34,33 +32,49 @@
                                 <li><a href="#"><i class="ri-whatsapp-line"></i></a></li>
                             </ul>
                         </div>
-                    </div>
                 </div>
-                <div id="bottom">
+                <div id="navbottom">
                         <div id="navlogo">
-                            <a href="#"><img src="logo.png" alt=""></a>
+                            <a href="#"><img src="logo.png" alt="" style="cursor: pointer;"></a>
                         </div>
-                    <div class="navbar">
+                        <div class="navbar">
                         <ul class="navbarList">
                             <li><a href="#">HOME</a></li>
-                            <li><a href="#">ABOUTUS<i class="ri-arrow-drop-down-line"></i></a></li>
-                            <li><a href="#">SERVICES<i class="ri-arrow-drop-down-line"></i></a></li>
+                            <li class="dropdown"><a href="#">ABOUTUS<i class="ri-arrow-drop-down-line"></i></a>
+                                <ul class="dropdown-content">
+                                    <li><a href="">About</a></li>
+                                    <li><a href="">Pricing</a></li>
+                                    <li><a href="">Privacy Policy</a></li>
+                                    <li><a href="">Terms & Conditions</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">SERVICES<i class="ri-arrow-drop-down-line"></i></a>
+                                <ul class="dropdown-content">
+                                    <li><a href="">Preventative Maintenance</a></li>
+                                    <li><a href="">Inspection</a></li>
+                                    <li><a href="">Repairs & Tune-ups</a></li>
+                                    <li><a href="">Relocation & Assembly</a></li>
+                                    <li><a href="">Commerical & Residential</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">GALLERY</a></li>
                             <li><a href="#">CONTACT</a></li>
                             <li><a href="#">REVIEWS</a></li>
                         </ul>
-                    </div>
-                        <div id="quote">
-                            <a href="Get Quote/getquote.html"><button id="getquote">GET QUOTE</button></a>
                         </div>
+                        <div id="quote">
+                            <!-- <button id="getquote">GET QUOTE</button> -->
+                            <a class="c-button v--primary">Get Quote</a>
+                        </div>
+                        <div class="hamburger" id="hamburger">&#9776;
+                        </div> <!-- Hamburger Icon -->
                 </div>
             </nav>
-        </div>
     </header>
     <main>
         <section class="mainsection">
             <div class="maincontent">
-                <div>
+                <div class="shapesanimation">
                 <!-- Animated Shapes -->
                 <div class="shape circle1"><img width="100" height="100" src="https://img.icons8.com/ios/100/treadmill.png" alt="treadmill"/></div>
                 <div class="shape circle2"><img width="64" height="64" src="https://img.icons8.com/external-photo3ideastudio-lineal-photo3ideastudio/64/external-elliptical-gym-photo3ideastudio-lineal-photo3ideastudio.png" alt="external-elliptical-gym-photo3ideastudio-lineal-photo3ideastudio"/></div>
@@ -69,7 +83,8 @@
                 </svg></div>
                 <div class="triangle"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-multimeter-electrician-flaticons-lineal-color-flat-icons-4.png" alt="external-multimeter-electrician-flaticons-lineal-color-flat-icons-4"/></div>
                 </div>
-                <div class="container">
+                <div class="hero">
+                    <div class="container">
                     <div class="left" id="leftText">Where</div>
                     <div class="middle">
                     <div class="word-wrapper" id="wordWrapper">
@@ -80,14 +95,15 @@
                     </div>
                 </div>
                     <div class="right" id="rightText">Happens</div>
-                </div>
-                <h4>Share it. Discuss it. Get it done. Side-by-side with Technical Experts.</h4>
-                <div class="buttons">
-                    <div id="quote">
-                        <a class="c-button v--primary">Get Quote</a>
                     </div>
-                    <div class="contactus">
-                        <a class="c-button v--secondary">Contact us <i class="ri-arrow-right-line"></i></a>
+                    <h4 style="font-size: xx-large;">Share it. Discuss it. Get it done. Side-by-side with Technical Experts.</h4>
+                    <div class="buttons">
+                        <div id="quote">
+                            <a class="c-button v--primary">Get Quote</a>
+                        </div>
+                        <div class="contactus">
+                            <a class="c-button v--secondary">Contact us <i class="ri-arrow-right-line"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="logo">
@@ -102,6 +118,9 @@
                     <video autoplay muted loop class="insitevideo" src="equipementlogo/video/Repair Video.mp4" poster=""></video>
                 </div>
             </div>
+        </section>
+        <section class="section-with-arc">
+        <!-- Your content goes here -->
         </section>
     </main>
     <script src="script.js"></script>
