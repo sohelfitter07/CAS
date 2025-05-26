@@ -88,63 +88,256 @@
                             <H3 style="font-size: 2.5rem; margin-bottom: 0.75%; font-weight: 500;">Request a Technician</H3>
                             <h6 style="font-size: 1.2rem; margin-bottom: 5%; font-weight: 400;">To serve you better, please describe the problem you are having with your machine and provide as much detail as possible. Include photos and videos with your request to help us troubleshoot your problem better.</h6>
                             <div id="inputs">
-                                <form action="" class="form">
-                                    <div class="formfield">
-                                         <div>
-                                        <label for="fname">First Name<span class="required">*</span></label><br>
-                                        <input type="text" id="fname" placeholder="e.g. John" required style="width: 300px;"><br>
+                                  <form action="/submit" method="post">
+                                    <h3 style="text-decoration: underline;">Personal Information</h3>
+                                        <!-- Your Name: First & Last -->
+                                        <div class="row">
+                                        <div>
+                                            <label for="firstName">First Name *</label>
+                                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                                         </div>
                                         <div>
-                                        <label for="lname">Last Name</label><br>
-                                        <input type="text" id="lname" placeholder="e.g. Santos" style="width: 300px;"><br>
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
                                         </div>
-                                    </div>
-                                    <div class="formfield">
-                                        <div>
-                                            <label for="email">Email<span class="required">*</span></label><br>
-                                            <input type="email" id="email" placeholder="someone@example.com" required style="width: 300px;"><br>
                                         </div>
+
+                                        <!-- Contact Number, Email, Preferred Contact (3 columns) -->
+                                        <div class="row three-columns">
                                         <div>
-                                            <label for="contactnumber">Contact Number<span class="required">*</span></label><br>
-                                            <input type="tel" id="contactnumber" placeholder="123-456-7890" required><br>
+                                            <label for="contactNumber">Contact Number *</label>
+                                            <input type="tel" id="contactNumber" name="contactNumber" placeholder="(123) 456-7890" required pattern="[\d\s\-\+\(\)]{7,}">
                                         </div>
                                         <div>
-                                            <label for="preferedcontact">Preferred Contact</label>
-                                            <select id="contacttype" name="contacttype" style="font-size: 1rem; padding: 6px 10px;">
-                                            <option value="email">Email</option>
-                                            <option value="phone">Phone</option>
-                                            <option value="none">Any</option>
+                                            <label for="email">Email Address *</label>
+                                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                                        </div>
+                                        <div>
+                                            <label for="preferredContact">Preferred Contact Method</label>
+                                            <div class="custom-select">
+                                            <select id="preferredContact" name="preferredContact" required>
+                                                <option value="">-- Select Contact Method --</option>
+                                                <option value="email">Email</option>
+                                                <option value="phone">Contact Number</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="addressfield">
-                                        <h3>Canadian Address</h3><br>
-                                        <input type="text" id="address1" name="address1" placeholder="123 Main St" style="width: 300px;"><br>
-                                        <label for="address1">Address Line 1:</label>
-                                    </div>
-                                    <label for="houseaddress">Address</label><br>
-                                    <input type="text" id="houseaddress"><br>
-                                    <label for="bookingdateandtime">Preferred date and time:</label><br>
-                                    <input type="datetime-local" id="bookingdateandtime" name="birthdaytime"><br>
-                                    <label for="choice1 choice2 choice3 choice3 choice4 choice5">Service Request<span class="required">*</span></label><br>
-                                    <input type="checkbox" id="choice1" value="Equipment Repair">
-                                    <label for="choice1"> Equipment Repair</label><br>
-                                    <input type="checkbox" id="choice2" value="Assembly & Installs">
-                                    <label for="choice2"> Assembly & Installs</label><br>
-                                    <input type="checkbox" id="choice3" value="Maintenance">
-                                    <label for="choice3"> Maintenance</label>
-                                    <input type="checkbox" id="choice4" value="Commerical">
-                                    <label for="choice4"> Commerical</label>
-                                    <input type="checkbox" id="choice5" value="Residential">
-                                    <label for="choice5"> Residential</label><br>
-                                    <label for="equipmentmodel">Make and Model<span class="required">*</span></label><br>
-                                    <input type="text" id="equipmentmodel" placeholder="Nordictrack T Series 10 Treadmill" size="50" required><br>
-                                    <label for="problemdescription">Describe the problem related to equipment/What You are looking for <span class="required">*</span></label><br>
-                                    <textarea name="" id="problemdescription" placeholder="Type of equipment, issue symptoms (e.g., treadmill belt slipping, elliptical making noise, screen not working), and when the problem began (e.g., treadmill stops suddenly, started last week)." style="width:400px; height:100px;"></textarea><br><br>
-                                    <label for="files">Do you have images to upload?</label><br><br>
-                                    <input type="file" id="files" multiple><br><br>
-                                    <label for="files"><span class="required">**if possible take Serial and model number label</span></label>
-                                </form>
+                                        </div>
+
+                                        <!-- Address (full width) -->
+                                        <label for="address">Street Address *</label>
+                                        <input type="text" id="address" name="address" placeholder="123 Example Street" required>
+
+                                        <!-- City and Postal Code side by side -->
+                                        <div class="row">
+                                        <div>
+                                            <label for="city">City/Town *</label>
+                                            <div class="custom-select">
+                                            <select id="city" name="city" class="select2" required>
+                                                <option value="">-- Select City/Town --</option>
+                                                <option value="Ajax">Ajax</option>
+                                                <option value="Alfred">Alfred</option>
+                                                <option value="Algonquin Highlands">Algonquin Highlands</option>
+                                                <option value="Amherstburg">Amherstburg</option>
+                                                <option value="Arnprior">Arnprior</option>
+                                                <option value="Atikokan">Atikokan</option>
+                                                <option value="Aurora">Aurora</option>
+                                                <option value="Barrie">Barrie</option>
+                                                <option value="Belleville">Belleville</option>
+                                                <option value="Blind River">Blind River</option>
+                                                <option value="Brampton">Brampton</option>
+                                                <option value="Brantford">Brantford</option>
+                                                <option value="Brockville">Brockville</option>
+                                                <option value="Burlington">Burlington</option>
+                                                <option value="Caledon">Caledon</option>
+                                                <option value="Cambridge">Cambridge</option>
+                                                <option value="Carlton Place">Carlton Place</option>
+                                                <option value="Casselman">Casselman</option>
+                                                <option value="Chatham-Kent">Chatham-Kent</option>
+                                                <option value="Clarington">Clarington</option>
+                                                <option value="Cobourg">Cobourg</option>
+                                                <option value="Cochrane">Cochrane</option>
+                                                <option value="Collingwood">Collingwood</option>
+                                                <option value="Cornwall">Cornwall</option>
+                                                <option value="Deep River">Deep River</option>
+                                                <option value="Dryden">Dryden</option>
+                                                <option value="Dunnville">Dunnville</option>
+                                                <option value="Elliot Lake">Elliot Lake</option>
+                                                <option value="Elmira">Elmira</option>
+                                                <option value="Embrun">Embrun</option>
+                                                <option value="Essex">Essex</option>
+                                                <option value="Espanola">Espanola</option>
+                                                <option value="Fort Erie">Fort Erie</option>
+                                                <option value="Fort Frances">Fort Frances</option>
+                                                <option value="Gananoque">Gananoque</option>
+                                                <option value="Georgina">Georgina</option>
+                                                <option value="Glencoe">Glencoe</option>
+                                                <option value="Goderich">Goderich</option>
+                                                <option value="Gravenhurst">Gravenhurst</option>
+                                                <option value="Grimsby">Grimsby</option>
+                                                <option value="Guelph">Guelph</option>
+                                                <option value="Haldimand County">Haldimand County</option>
+                                                <option value="Haliburton">Haliburton</option>
+                                                <option value="Halton Hills">Halton Hills</option>
+                                                <option value="Hamilton">Hamilton</option>
+                                                <option value="Hanover">Hanover</option>
+                                                <option value="Hearst">Hearst</option>
+                                                <option value="Huntsville">Huntsville</option>
+                                                <option value="Innisfil">Innisfil</option>
+                                                <option value="Kawartha Lakes">Kawartha Lakes</option>
+                                                <option value="Kenora">Kenora</option>
+                                                <option value="Kincardine">Kincardine</option>
+                                                <option value="King">King</option>
+                                                <option value="Kingston">Kingston</option>
+                                                <option value="Kitchener">Kitchener</option>
+                                                <option value="Lindsay">Lindsay</option>
+                                                <option value="London">London</option>
+                                                <option value="Markham">Markham</option>
+                                                <option value="Midland">Midland</option>
+                                                <option value="Milton">Milton</option>
+                                                <option value="Moosonee">Moosonee</option>
+                                                <option value="Moose Factory">Moose Factory</option>
+                                                <option value="Mount Forest">Mount Forest</option>
+                                                <option value="Newmarket">Newmarket</option>
+                                                <option value="Niagara Falls">Niagara Falls</option>
+                                                <option value="Niagara-on-the-Lake">Niagara-on-the-Lake</option>
+                                                <option value="North Bay">North Bay</option>
+                                                <option value="Oakville">Oakville</option>
+                                                <option value="Orillia">Orillia</option>
+                                                <option value="Oshawa">Oshawa</option>
+                                                <option value="Ottawa">Ottawa</option>
+                                                <option value="Oxford County">Oxford County</option>
+                                                <option value="Parry Sound">Parry Sound</option>
+                                                <option value="Pembroke">Pembroke</option>
+                                                <option value="Perth">Perth</option>
+                                                <option value="Peterborough">Peterborough</option>
+                                                <option value="Pickering">Pickering</option>
+                                                <option value="Port Colborne">Port Colborne</option>
+                                                <option value="Port Hope">Port Hope</option>
+                                                <option value="Prescott">Prescott</option>
+                                                <option value="Quinte West">Quinte West</option>
+                                                <option value="Renfrew">Renfrew</option>
+                                                <option value="Richmond Hill">Richmond Hill</option>
+                                                <option value="Sarnia">Sarnia</option>
+                                                <option value="Sault Ste. Marie">Sault Ste. Marie</option>
+                                                <option value="Scugog">Scugog</option>
+                                                <option value="Shelburne">Shelburne</option>
+                                                <option value="Smiths Falls">Smiths Falls</option>
+                                                <option value="St. Catharines">St. Catharines</option>
+                                                <option value="St. Marys">St. Marys</option>
+                                                <option value="St. Thomas">St. Thomas</option>
+                                                <option value="Stratford">Stratford</option>
+                                                <option value="Temiskaming Shores">Temiskaming Shores</option>
+                                                <option value="Thorold">Thorold</option>
+                                                <option value="Tillsonburg">Tillsonburg</option>
+                                                <option value="Timmins">Timmins</option>
+                                                <option value="Toronto">Toronto</option>
+                                                <option value="Uxbridge">Uxbridge</option>
+                                                <option value="Vaughan">Vaughan</option>
+                                                <option value="Waterloo">Waterloo</option>
+                                                <option value="Welland">Welland</option>
+                                                <option value="Wellington County">Wellington County</option>
+                                                <option value="Windsor">Windsor</option>
+                                                <option value="Woodstock">Woodstock</option>
+                                                <option value="York">York</option>
+                                                <option value="Yorkton">Yorkton</option>
+                                                <option value="Whitby">Whitby</option>
+                                                <option value="Whitchurch-Stouffville">Whitchurch-Stouffville</option>
+                                                <option value="Wasaga Beach">Wasaga Beach</option>
+                                                <option value="Wawa">Wawa</option>
+                                                <option value="Wiarton">Wiarton</option>
+                                            </select>
+                                            </div>
+                                        </div>
+
+                                            <div>
+                                                <label for="postal">Postal Code *</label>
+                                                <input type="text" id="postal" name="postal" placeholder="A1A 1A1" required pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d">
+                                            </div>
+                                        </div>
+
+                                        <!-- Province and Country side by side at the last line -->
+                                        <div class="row">
+                                            <div>
+                                                <label for="province">Province</label>
+                                                <div class="custom-select">
+                                                    <select id="province" name="province" disabled>
+                                                    <option value="ON" selected>Ontario</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label for="country">Country</label>
+                                                <input type="text" id="country" name="country" value="Canada" disabled>
+                                            </div>
+                                        </div>
+
+                                        <!-- Equipment Information -->
+
+                                        <h3 style="text-decoration: underline; margin-top: 2%;">Personal Information</h3>
+
+                                        
+                                        <!-- First Row: Service Request & Client Type -->
+                                        <div class="row">
+                                            <div>
+                                                <label for="serviceRequest">Service Request *</label>
+                                                <div class="custom-select">
+                                                    <select id="serviceRequest" name="serviceRequest" required>
+                                                    <option value="">-- Select Service --</option>
+                                                    <option value="Preventative Maintenance">Preventative Maintenance</option>
+                                                    <option value="Inspection">Inspection</option>
+                                                    <option value="Repairs & Tune-Ups">Repairs & Tune-Ups</option>
+                                                    <option value="Relocation & Assembly">Relocation & Assembly</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label>I am a(n) *</label>
+                                                <div class="row" style="margin-top: 5px;">
+                                                    <input type="radio" id="individual" name="clientType" value="Individual" required>
+                                                    <label for="individual">Individual</label>
+                                                    &nbsp;&nbsp;
+                                                    <input type="radio" id="business" name="clientType" value="Business">
+                                                    <label for="business">Business</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Second Row: Manufacturer, Model, Serial -->
+                                        <div class="row">
+                                        <div>
+                                            <label for="brand">Equipment Manufacturer *</label>
+                                            <input type="text" id="brand" name="brand" required placeholder="e.g. NordicTrack, LifeFitness">
+                                        </div>
+                                        <div>
+                                            <label for="model">Model Number *</label>
+                                            <input type="text" id="model" name="model" required placeholder="e.g. NTL19125 or NTL17125">
+                                        </div>
+                                        <div>
+                                            <label for="serial">Serial Number</label>
+                                            <input type="text" id="serial" name="serial" required>
+                                        </div>
+                                        </div>
+
+                                        <!-- Third Row: Booking Availability -->
+                                        <div>
+                                        <label for="bookingDateTime">Preferred Booking Date & Time *</label>
+                                        <input type="datetime-local" id="bookingDateTime" name="bookingDateTime" required>
+                                        </div>
+
+                                        <!-- Fourth Row: Description -->
+                                        <div>
+                                        <label for="description">Description of Issue *</label>
+                                        <textarea id="description" name="description" rows="5" style="width: 100%;" required placeholder="Example: Treadmill belt slipping, Elliptical making noise, Console not powering on, Motor overheating, Resistance not adjusting..."></textarea>
+                                        </div>
+
+                                        <!-- Fifth Row: File Upload -->
+                                        <div>
+                                        <label for="equipmentFile">Do you want to upload equipment Image/Video?</label>
+                                        <input type="file" id="equipmentFile" name="equipmentFile" accept="image/*,video/*"><br>
+                                        <small>You can upload images or short videos showing the issue.</small>
+                                        </div>
+                                    </form>
                             </div>
                             <div id="submit">
                                 <button id="getquote">Book Your Service Now <i class="ri-service-line"></i></button>

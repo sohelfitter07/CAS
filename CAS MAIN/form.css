@@ -253,6 +253,7 @@ opacity: 0.25;
 background-color: #451C4A;
 }
 .quoteform{
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -263,7 +264,7 @@ background-color: #451C4A;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    text-justify:distribute-all-lines;
+    /* text-justify:distribute-all-lines; */
 }
 #inputs{
     font-size: 1.2rem;
@@ -272,22 +273,100 @@ background-color: #451C4A;
 .required{
     color: red;
 }
-form input{
-    font-size: 1rem;
-    padding: 6px 10px;
-}
-.formfield{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    gap: 1rem;
-}
-.addressfield{
-    display: flex;
-    flex-direction: column;
-}
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    form {
+      max-width: 800px;
+      margin: auto 0%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: white;
+    }
+
+    #bookingDateTime{
+      width: 50%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: white;
+    }
+
+    .custom-select {
+      position: relative;
+    }
+
+    .custom-select::after {
+      content: "▼";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #666;
+    }
+    select {
+    background-color: white;
+    color: black;
+    }
+    select option:hover {
+      background-color: green;
+      color: white;
+    }
+    
+
+    .row {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .row > div {
+      flex: 1;
+    }
+
+    /* For 3-column row */
+    .row.three-columns > div {
+      flex: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
