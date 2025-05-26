@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    color: #481A54;
+    font-family: "Roboto", sans-serif;
+    /* position: relative; */
+    
+} 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white; /* or match your site background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional */
+  min-height: 20%;
+    margin-bottom: 0%;
+    /* overflow: hidden; */
+}
+#contactlist{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #451C4A;
+    height: 5vh;
+    padding: 0 3%;
+    position: absolute;
+    z-index: 1;
+}
+.links a:hover{
+    transform: scale(1.25);
+    color: white;
+}
+.leftheaderlinks ul.links li a {
+    display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftheaderlinks ul.links li a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+.links{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.links a{
+    color: #ffffff;
+    font-size: large;
+    text-decoration: none;
+}
+.headerlinks ul.links li {
+  display: inline-block;
+  margin: 8px;
+}
+
+.headerlinks ul.links li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #451C4A;
+  transition: all 0.5s ease;
+  font-size: 20px;
+}
+
+.headerlinks ul.links li a:hover {
+  background-color: #321536;
+  color: white;
+  transform: scale(1.25);
+}
+#navbottom{
+    width: 100%;
+    height: 15vh;
+    margin: 0 auto;
+    max-width: 1600px;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10%;
+    font-weight: 600;
+    position: relative;
+}
+#navbottom img{
+    position: absolute;
+    object-fit: cover;
+    overflow: hidden;
+    top: 2.5%;
+    left: 3%;
+}
+#nav{
+    width: 100%;
+    position: relative;
+}
+#navlogo img{
+    height: 23vh;
+    margin-top: 5px;
+}
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+.navbarList{
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    list-style: none;
+    font-size: 20px;
+    
+}
+.navbarList a{
+    text-decoration: none;
+    color: #481A54;
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    position: relative;
+    top: 30%;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 180%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.4s ease, padding 0.5s ease;
+  padding: 0 0;
+  text-transform: uppercase;
+  
+}
+.dropdown-content li {
+  padding: 12px 16px;
+}
+.dropdown-content li a {
+  text-decoration: none;
+  color: #481A54;
+  display: block;
+  
+}
+.dropdown-content li:hover{
+   background-color: inherit;
+   transform: translateY(-4px); /* Lifts the item up */
+    background-color: #f0f0f0;   /* Optional: subtle background change */
+
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  color: #000;
+  max-height: 500px;
+  padding: 10px 0;
+}
+#quote{
+    position: relative;
+    top: 30%;
+}
+#getquote{
+background-color: #451C4A;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: x-large;
+ transition: .6s ease-in-out;
+}
+#getquote:hover{
+  background-color: #ffffff;
+  color: #451C4A;
+  border: 1px solid #451C4A;
+}
+.maincontent h1{
+    color: #000;
+    font-size: 3.5rem;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+}
+.c-button {
+    appearance: none;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: .057em;
+    text-transform: uppercase;
+    background: 0 0;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    padding: 19px 40px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.286;
+    text-decoration: none;
+    transition: box-shadow .42s cubic-bezier(.165,.84,.44,1), color .42s cubic-bezier(.165,.84,.44,1), back-ground .42s cubic-bezier(.165,.84,.44,1);
+    display: block;
+    transition: .6s ease-in-out;
+    
+}
+.v--secondary
+ {
+    color: #451C4A;
+    fill: #451C4A;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1px #451C4A;
+}
+.v--primary
+ {
+    color: #fff;
+    fill: #fff;
+    background-color: #451C4A;
+ }
+ .v--primary:hover{
+    /* background-color: #430d49; */
+    background-color: #ffffff;
+    color: #451C4A;
+    border: 1px solid #451C4A;
+ }
+ .v--secondary:hover{
+    /* border: 1.5PX SOLID #430d49; */
+    background-color: #451C4A;
+    color: white;
+    border: 1px solid white;
+    
+ }
+
+ /* Homepage Main Section */
+.firstsection{
+    height: 100vh;
+}
+.secondsection{
+    height: 100vh;
+}
+ /* Footer CSS */
+
+ footer{
+        height: 60%;
+        width: 100%;
+        margin-top: 450px;
+        color: #fff;
+    }
+    .footertop{
+        height: 80%;
+        background-color: #451C4A;
+        border-bottom: 1px solid white;
+    }
+    .footerbottom{
+        height: 20%;
+        background-color: #451C4A;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 15%;
+        align-items: center;
+    }
+.footerlinks ul.links li {
+  display: inline-block;
+  margin: 8px;
+}
+
+.footerlinks ul.links li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #451C4A;
+  transition: all 0.5s ease;
+  font-size: 20px;
+}
+
+.footerlinks ul.links li a:hover {
+  background-color: #321536;
+  color: white;
+  transform: scale(1.7);
+}
+.footertop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15%;
+    gap: 35%;
+}
+.footertop-left{
+
+}
+.footertop-right{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

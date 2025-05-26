@@ -12,6 +12,14 @@ html, body{
     position: relative;
     
 } 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white; /* or match your site background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional */
+  min-height: 20%;
+}
 #contactlist{
     width: 100%;
     display: flex;
@@ -24,8 +32,17 @@ html, body{
     z-index: 1;
 }
 .links a:hover{
-    font-size: x-large;
-    color: #D17DFE;
+    transform: scale(1.25);
+    color: white;
+}
+.leftheaderlinks ul.links li a {
+    display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftheaderlinks ul.links li a:hover {
+  color: white;
+  transform: scale(1.1);
 }
 .links{
     display: flex;
@@ -37,9 +54,32 @@ html, body{
     font-size: large;
     text-decoration: none;
 }
+.headerlinks ul.links li {
+  display: inline-block;
+  margin: 8px;
+}
 
-#navbottom
-{
+.headerlinks ul.links li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #451C4A;
+  transition: all 0.5s ease;
+  font-size: 20px;
+}
+
+.headerlinks ul.links li a:hover {
+  background-color: #321536;
+  color: white;
+  transform: scale(1.25);
+}
+#navbottom{
     width: 100%;
     height: 15vh;
     margin: 0 auto;
@@ -64,7 +104,8 @@ html, body{
     position: relative;
 }
 header{
-    margin-bottom: 3%;
+    margin-bottom: 0%;
+    overflow: hidden;
 }
 #navlogo img{
     height: 23vh;
@@ -142,7 +183,6 @@ header{
 #quote{
     position: relative;
     top: 30%;
-
 }
 #getquote{
 background-color: #451C4A;
@@ -220,153 +260,65 @@ background-color: #451C4A;
     
  }
 
- /* Form Page CSS */
-.quotepage{
+ /* Footer CSS */
+
+ footer{
+        height: 60%;
+        width: 100%;
+        margin-top: 450px;
+        color: #fff;
+    }
+    .footertop{
+        height: 80%;
+        background-color: #451C4A;
+        border-bottom: 1px solid white;
+    }
+    .footerbottom{
+        height: 20%;
+        background-color: #451C4A;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 15%;
+        align-items: center;
+    }
+.footerlinks ul.links li {
+  display: inline-block;
+  margin: 8px;
+}
+
+.footerlinks ul.links li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #451C4A;
+  transition: all 0.5s ease;
+  font-size: 20px;
+}
+
+.footerlinks ul.links li a:hover {
+  background-color: #321536;
+  color: white;
+  transform: scale(1.7);
+}
+.footertop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15%;
+    gap: 35%;
+}
+.footertop-left{
+
+}
+.footertop-right{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 100%;
 }
-.backgroundoverlay{
-    position: relative;
-    background-color: #130129;
-}
-.container{
-position: absolute;
-z-index: 100;
-width: 30%;
-font-size: 2rem;
-/* font-weight: 800; */
-color: #ffffff;
-top: 20%;
-left: 20%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-.backgroundoverlay img{
-width: 100%;
-height: 45vh;
-object-fit: cover;
-filter: blur(3px);
-opacity: 0.25;
-background-color: #451C4A;
-}
-.quoteform{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 20%;
-}
-.mainform{
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* text-justify:distribute-all-lines; */
-}
-#inputs{
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-.required{
-    color: red;
-}
-    form {
-      max-width: 800px;
-      margin: auto 0%;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-color: white;
-    }
-
-    #bookingDateTime{
-      width: 50%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-color: white;
-    }
-
-    .custom-select {
-      position: relative;
-    }
-
-    .custom-select::after {
-      content: "▼";
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
-      pointer-events: none;
-      color: #666;
-    }
-    select {
-    background-color: white;
-    color: black;
-    }
-    select option:hover {
-      background-color: green;
-      color: white;
-    }
-    
-
-    .row {
-      display: flex;
-      gap: 15px;
-      margin-top: 5px;
-    }
-
-    .row > div {
-      flex: 1;
-    }
-
-    /* For 3-column row */
-    .row.three-columns > div {
-      flex: 1;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px;
-      width: 100%;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
