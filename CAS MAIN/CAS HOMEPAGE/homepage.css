@@ -9,6 +9,7 @@ html, body{
     height: 100%;
     color: #481A54;
     font-family: "Roboto", sans-serif;
+    background-color: antiquewhite;
     /* position: relative; */
     
 } 
@@ -679,4 +680,29 @@ gap: 3%;
       color: #451C4A;
       border: 1px solid #451C4A;
       transform: translateY(-2px);
+    }
+    .brands{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 5% 5%;
+    }
+    .brandsdescription{
+      width: 40%;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .brandslogo{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+    .brandlogo{
+      width: 30px;
+      height: 30px;
+      background-color: aqua;
     }
