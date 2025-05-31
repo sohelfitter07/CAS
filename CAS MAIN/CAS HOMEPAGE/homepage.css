@@ -15,7 +15,7 @@
 
 html, body{
     max-width: 1920px;
-    min-width: 1025px;
+    min-width: 320px;
     color: var(--text-color);
     font-family: "Roboto", sans-serif;
     background-color: var(--bg-color);
@@ -55,7 +55,7 @@ header {
     background-color: var(--bg-color);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-weight: 600;
     margin: 1% 0;
 }
@@ -112,10 +112,10 @@ header {
 }
 
 .hamburger {
-    display: none;
+    display: flex;
     font-size: 2rem;
     cursor: pointer;
-    padding: 10px;
+    padding: 0.6rem;
 }
 
 .navbarList{
