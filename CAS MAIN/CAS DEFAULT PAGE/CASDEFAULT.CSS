@@ -215,31 +215,42 @@ header {
 /* Footer CSS */
 
 footer{
-        height: 60%;
-        width: 100%;
-        color: var(--text-color);
-        background-color: var(--theme-color);
-        padding: 2rem 8rem 0.5rem 8rem;
-        display: flex;
-        flex-direction: column;
+height: 60%;
+width: 100%;
+color: var(--text-color);
+background-color: var(--theme-color);
+display: flex;
+flex-direction: column;
+padding: 1rem 2rem 0.25rem 2rem;
 }
 
 .footertop{
   height: 80%;
   border-bottom: 1px solid var(--bg-color);
-  padding: auto 0;
   display: flex;
   align-items: start;
   justify-content: center;
   gap: 10rem;
 }
 
+.footertop-right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.footertop-left{
+  padding-bottom: 1rem;
+}
+
 .footerbottom{
-        height: 20%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+max-height: 20%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
 }
 
 .footerlinks ul.links li {
@@ -268,20 +279,14 @@ footer{
   transform: scale(1.2);
 }
 
-.footertop-right{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 2rem;
-    padding-bottom: 2rem;
-}
-.footertop-left{
-  padding-bottom: 1rem;
-}
 
 main{
   height: 100vh;
 }
+
+
+/* Laptop and Ipad/Tables */
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
   /* Adjust layout, font sizes, paddings, columns */
@@ -311,12 +316,32 @@ padding: 0.4rem 0.8rem 0.4rem;
 font-size: 0.9rem;
 
 }
+
+.footertop{
+  gap: 5rem;
+  font-size: 0.9rem;
+}
+
+.footerbottom{
+  font-size: 0.8rem;
+}
 .footerlinks{
 flex-wrap: wrap;
 justify-content: center;
 font-size: 0.9rem;
-
 }
+
+
+.footerlinks ul.links li a {
+  width: 2em;
+  height: 2em;
+  font-size: 0.9rem;
+}
+
+.rightlinks{
+  gap: 0.2rem;
+}
+
 }
 
 
@@ -376,13 +401,32 @@ margin: 0.75rem 0;
     transform: rotate(90deg); /* Rotate icon when close */
   }
 
+.footertop{
+  gap: 4rem;
+  font-size: 0.7rem;
+}
+.footertop-right{
+gap: 1.25rem;
+}
+
+
 .footerbottom{
   flex-direction: column;
   margin-top: 1rem;
+  font-size: 0.8rem;
 }
+
 .footerlinks{
 flex-wrap: wrap;
 justify-content: center;
-font-size: 0.9rem;
 }
+.rightlinks{
+  gap: 0.2rem;
+}
+.footerlinks ul.links li a {
+  width: 2em;
+  height: 2em;
+  font-size: 0.8rem;
+}
+
 }
